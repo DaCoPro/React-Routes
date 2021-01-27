@@ -1,16 +1,15 @@
-import * as usersService from '../../utilities/users-service';
+import React from 'react';
+import RouteList from '../../components/RouteList/RouteList';
 
-export default function RoutesPage() {
 
-async function handleCheckToken() {
-    const expDate = await usersService.checkToken();
-    console.log(expDate);
-    }
-
+export default function RoutesPage({ routes }) {
     return (
-    <>
+    <main className="RoutesPage">
         <h1>Routes</h1>
+        <div>
+            <RouteList routes={routes} /> 
+        </div>
        
-    </>
+    </main>
     );
 }
