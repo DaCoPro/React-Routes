@@ -4,7 +4,7 @@ import { getUser } from '../../utilities/users-service';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
-import OrderHistoryPage from '../NewOrderPage/NewOrderPage';
+import RoutesPage from '../../pages/RoutesPage/RoutesPage';
 import NavBar from '../../components/NavBar/NavBar';
 
 
@@ -21,7 +21,7 @@ export default function App() {
                 <NewOrderPage />
               </Route>
               <Route path="/orders">
-                <OrderHistoryPage />
+                <RoutesPage />
               </Route>
               <Redirect to="/orders" />
             </Switch>
