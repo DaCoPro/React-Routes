@@ -7,6 +7,7 @@ import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import AddRoutePage from '../NewRoutePage/NewRoutePage';
 import RoutesPage from '../../pages/RoutesPage/RoutesPage';
 import NavBar from '../../components/NavBar/NavBar';
+import RouteDetailPage from '../../pages/RouteDetailPage/RouteDetailPage';
 import * as routesAPI from '../../utilities/routes-api';
 
 
@@ -39,6 +40,9 @@ export default function App() {
               </Route>
               <Route path="/add">
                 <AddRoutePage handleAddRoute={handleAddRoute} />
+              </Route>
+              <Route exact path="/details" >
+                <RouteDetailPage /> 
               </Route>
               <Redirect to="/orders" />
             </Switch>

@@ -4,5 +4,6 @@ const routesCtrl = require('../../controllers/api/routes');
 
 router.get("/", routesCtrl.index);
 router.post("/", routesCtrl.create);
+router.get("/:id", routesCtrl.show);
 
 module.exports = router;

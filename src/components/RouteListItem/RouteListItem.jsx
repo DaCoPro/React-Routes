@@ -1,11 +1,18 @@
+import { Link } from "react-router-dom";
 import './RouteListItem.css'
 
 export default function RouteListItem({ route }) {
     return (
+        
         <div className="RouteListItem">
-            <h1>{route.name}</h1>
-            <h2>{route.grade}</h2>
-            <h4>{route.description}</h4>
+            <h2>{route.name}</h2>
+            
+            <Link to={{
+                pathname: "/details",
+                state: { route }
+            }}>Details</Link>
         </div>
+        
     )
 }
+
