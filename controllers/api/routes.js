@@ -3,7 +3,9 @@ const Route = require('../../models/route');
 module.exports = {
     index,
     create,
-    show
+    show,
+    update,
+    deleteOne
 }
 
 async function index(req, res) {
@@ -20,3 +22,15 @@ async function show(req, res) {
     const route = await Route.findById(req.params.id);
     res.status(200).json(route);
 }
+
+async function update(req, res) {
+    const updatedRoute = await Route.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
+    res.status(200).json(updatedRoute);
+  }
+
+  async function deleteOne(req, res) {
+    const deletedRoute = await Route.findByIdAndRemove(req.params.id);
+    res.status(200).json(deletedRoute);
+  }
