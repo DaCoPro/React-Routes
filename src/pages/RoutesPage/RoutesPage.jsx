@@ -1,6 +1,6 @@
 import React from 'react';
-import RouteList from '../../components/RouteList/RouteList';
 
+import RouteList from '../../components/RouteList/RouteList';
 
 export default function RoutesPage({ routes }) {
     return (
@@ -9,7 +9,6 @@ export default function RoutesPage({ routes }) {
         <div>
             <RouteList routes={routes} /> 
         </div>
-       
     </main>
     );
 }

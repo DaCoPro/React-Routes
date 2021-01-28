@@ -4,6 +4,7 @@ import { getUser } from '../../utilities/users-service';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
+import AddRoutePage from '../NewRoutePage/NewRoutePage';
 import RoutesPage from '../../pages/RoutesPage/RoutesPage';
 import NavBar from '../../components/NavBar/NavBar';
 import * as routesAPI from '../../utilities/routes-api';
@@ -22,6 +23,11 @@ export default function App() {
     getRoutes();
   }, []);
 
+  async function handleAddRoute(newRouteData) {
+    const newRoute = await routesAPI.create(newRouteData);
+    setRoute([...route, newRoute]);
+  }
+
   return (
     <main className="App">
       { user ? 
@@ -31,8 +37,8 @@ export default function App() {
               <Route path="/routes">
                 <RoutesPage routes={route}/>
               </Route>
-              <Route path="/orders/new">
-                {/* <RoutesPage /> */}
+              <Route path="/add">
+                <AddRoutePage handleAddRoute={handleAddRoute} />
               </Route>
               <Redirect to="/orders" />
             </Switch>
